@@ -1,0 +1,33 @@
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+    - src/data_ingestion.py
+    outs:
+    - data/rawfile.csv
+  data_preprocessing:
+    cmd: python src/data_preprocessing.py
+    deps:
+    - data/rawfile.csv
+    - src/data_preprocessing.py
+    outs:
+    - data/Cleaned_rawfile.csv
+  model_building:
+    cmd: python src/model_building.py
+    deps:
+    - data/Cleaned_rawfile.csv
+    - src/model_building.py
+    outs:
+    - model/telecom_user.pkl
+    - data/x_test.csv
+    - data/y_test.csv
+  model_evaluation:
+    cmd: python src/model_evaluation.py
+    deps:
+    - model/telecom_user.pkl
+    - data/x_test.csv
+    - data/y_test.csv
+    outs:
+    - metrics/metric.json
+metrics:
+- metrics/metric.json

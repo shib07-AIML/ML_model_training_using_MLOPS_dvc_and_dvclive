@@ -1,8 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split 
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier
 
 
 data=pd.read_csv('C:/Users/sgoel/IVP/New folder___/ML_model_training_using_MLOPS_dvc_and_dvclive/data/cleaned_rawfile.csv')
@@ -21,7 +20,7 @@ X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=.3,random_state=42)
 
 X_train=scale.fit_transform(X_train)
 #X_test=scale.transform(X_test)
-new_model=RandomForestRegressor(max_depth=10, max_features='log2')
+new_model=RandomForestClassifier(max_depth=10, max_features='sqrt')
 new_model.fit(X_train,y_train)
 
 import pickle
