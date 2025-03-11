@@ -15,12 +15,12 @@ y=data.iloc[:,3:4].values.ravel()
 #print(y)
 
 scale=StandardScaler()
-X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=.3,random_state=42)
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=.25,random_state=42)
 
 
 X_train=scale.fit_transform(X_train)
 #X_test=scale.transform(X_test)
-new_model=RandomForestClassifier(max_depth=10, max_features='sqrt')
+new_model=RandomForestClassifier(max_depth=15, max_features='sqrt')
 new_model.fit(X_train,y_train)
 
 import pickle
