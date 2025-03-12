@@ -21,7 +21,7 @@ stages:
       size: 1895201
     - path: src/data_preprocessing.py
       hash: md5
-      md5: a7fc0595a05660810cee62d58ba2141d
+      md5: 350882e8969bc8d2713529273d7aed39
       size: 2620
     outs:
     - path: data/Cleaned_rawfile.csv
@@ -33,18 +33,42 @@ stages:
     deps:
     - path: data/x_test.csv
       hash: md5
-      md5: c0c53e53598a8c030e195fe8f9b1e85c
-      size: 72507
+      md5: 38b05fa48aefab81a56dc76fcebc81a9
+      size: 72479
     - path: data/y_test.csv
       hash: md5
-      md5: 55317c52795b65223a8ffbfa19573831
+      md5: 166f8e12d3c9f6bf16783de5e55325ef
       size: 1695
     - path: model/telecom_user.pkl
       hash: md5
-      md5: 600b37c7d513d475f4ba485e29803165
-      size: 1359025
+      md5: 39cf4b69783c079b1cc86dd03c9daedf
+      size: 1355677
     outs:
     - path: metrics/metric.json
       hash: md5
-      md5: 0af9f67633b9c2f8143ef61e34389a32
-      size: 150
+      md5: fa3abc7ea6be1334c6856e47b7184a00
+      size: 112
+  model_building:
+    cmd: python src/model_building.py
+    deps:
+    - path: data/cleaned_rawfile.csv
+      hash: md5
+      md5: 9abaad7f5050abec606d117514c44952
+      size: 293033
+    - path: src/model_building.py
+      hash: md5
+      md5: 74913eadfedcb435505e8edc4e15a8e0
+      size: 1259
+    outs:
+    - path: data/x_test.csv
+      hash: md5
+      md5: 38b05fa48aefab81a56dc76fcebc81a9
+      size: 72479
+    - path: data/y_test.csv
+      hash: md5
+      md5: 166f8e12d3c9f6bf16783de5e55325ef
+      size: 1695
+    - path: model/telecom_user.pkl
+      hash: md5
+      md5: 39cf4b69783c079b1cc86dd03c9daedf
+      size: 1355677
