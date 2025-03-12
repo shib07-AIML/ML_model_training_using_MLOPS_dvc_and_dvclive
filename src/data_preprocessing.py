@@ -55,8 +55,8 @@ result=np.quantile(finaldf['Population'],[.25,.75])
 result
 
 iqr=np.quantile(finaldf['Population'],.75)-np.quantile(finaldf['Population'],.25)
-uperfence=iqr-1.5*np.quantile(finaldf['Population'],.25)
-lowerfence=iqr+1.5*np.quantile(finaldf['Population'],.75)
+uperfence=iqr-2.5*np.quantile(finaldf['Population'],.25)
+lowerfence=iqr+2.5*np.quantile(finaldf['Population'],.75)
 uperfence,lowerfence
 
 updated_finaldf=finaldf[(finaldf['Population'] > 30265.0) & (finaldf['Population'] < 87968.5)]

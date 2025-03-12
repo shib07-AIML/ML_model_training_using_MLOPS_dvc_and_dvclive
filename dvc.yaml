@@ -12,15 +12,6 @@ stages:
     - src/data_preprocessing.py
     outs:
     - data/Cleaned_rawfile.csv
-  model_building:
-    cmd: python src/model_building.py
-    deps:
-    - data/Cleaned_rawfile.csv
-    - src/model_building.py
-    outs:
-    - model/telecom_user.pkl
-    - data/x_test.csv
-    - data/y_test.csv
   model_evaluation:
     cmd: python src/model_evaluation.py
     deps:

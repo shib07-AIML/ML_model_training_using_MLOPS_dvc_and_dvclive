@@ -28,30 +28,6 @@ stages:
       hash: md5
       md5: 9abaad7f5050abec606d117514c44952
       size: 293033
-  model_building:
-    cmd: python src/model_building.py
-    deps:
-    - path: data/Cleaned_rawfile.csv
-      hash: md5
-      md5: 9abaad7f5050abec606d117514c44952
-      size: 293033
-    - path: src/model_building.py
-      hash: md5
-      md5: e46e176e592967e5700b6e577fa2275f
-      size: 1259
-    outs:
-    - path: data/x_test.csv
-      hash: md5
-      md5: c0c53e53598a8c030e195fe8f9b1e85c
-      size: 72507
-    - path: data/y_test.csv
-      hash: md5
-      md5: 55317c52795b65223a8ffbfa19573831
-      size: 1695
-    - path: model/telecom_user.pkl
-      hash: md5
-      md5: 600b37c7d513d475f4ba485e29803165
-      size: 1359025
   model_evaluation:
     cmd: python src/model_evaluation.py
     deps:

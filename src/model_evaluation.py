@@ -24,7 +24,7 @@ metrics_dict = {
             'accuracy': accuracy,
             'precision': precision,
             'recall': recall,
-            'f1_score': f1_score
+            #'f1_score': f1_score
         }
 if not os.path.exists('C:/Users/sgoel/IVP/New folder___/ML_model_training_using_MLOPS_dvc_and_dvclive/metrics'):
     os.makedirs('C:/Users/sgoel/IVP/New folder___/ML_model_training_using_MLOPS_dvc_and_dvclive/metrics')
